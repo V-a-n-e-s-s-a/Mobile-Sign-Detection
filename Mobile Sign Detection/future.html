@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Future Improvements - Mobile Sign Detection</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar subpage-navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="introduction.html">Intro</a>
+                <a href="mobile-cameras.html">Mobile Cameras</a>
+                <a href="techniques.html">Techniques</a>
+                <a href="research.html">Research</a>
+                <a href="difficult-scenarios.html">Difficult Scenarios</a>
+                <a href="limitations.html">Limitations</a>
+                <a href="future.html" class="active">Future</a>
+                <a href="interactive.html">Quiz</a>
+                <a href="bibliography.html">Bibliography</a>
+
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="page-layout">
+
+        <!-- Sticky Sidebar -->
+        <aside class="side-menu">
+
+            <a href="index.html" class="side-title">
+                MOBILE SIGN DETECTION
+            </a>
+
+            <div class="side-links">
+
+                <a href="#what-could-improve">
+                    What Could Improve?
+                </a>
+
+                <a href="#small-signs">
+                    Better Detection of Small Signs
+                </a>
+
+                <a href="#angles-occlusion">
+                    Handling Angles and Occlusion
+                </a>
+
+                <a href="#complex-environments">
+                    Better Performance in Complex Environments
+                </a>
+
+                <a href="#mobile-efficiency">
+                    More Efficient Models
+                </a>
+
+                <a href="#better-camera">
+                    Better Use of the Camera
+                </a>
+
+                <a href="#user-choice">
+                    Letting the User Choose
+                </a>
+
+                <a href="#hybrid-processing">
+                    On-Device and Cloud
+                </a>
+
+                <a href="#researcher">
+                    Researcher Perspective
+                </a>
+
+                <a href="#research-labs">
+                    Research Labs
+                </a>
+
+                <a href="#future-system">
+                    A Possible Future System
+                </a>
+
+                <a href="#future-direction">
+                    Future Direction
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Page Content -->
+        <div class="page-content">
+
+            <!-- Page Audio -->
+            <section class="audio-section">
+
+                <div class="audio-card">
+
+                    <div class="audio-icon">
+                        🎧
+                    </div>
+
+                    <div class="audio-content">
+
+                        <p class="audio-label">
+                            LISTEN TO THIS PAGE
+                        </p>
+
+                        <h3>
+                            Future Improvements for Mobile Sign Detection
+                        </h3>
+
+                        <p>
+                            Listen to possible improvements involving small signs,
+                            occlusion, mobile processing, camera coverage, and user control.
+                        </p>
+
+                        <audio controls>
+                            <source src="audio/future.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <p class="course">CS 663 — Computer Vision</p>
+
+                <h1>Future Improvements</h1>
+
+                <p>
+                    How could mobile sign detection become more useful,
+                    reliable, and accessible?
+                </p>
+
+            </section>
+
+
+            <!-- Introduction -->
+            <section class="content-section" id="what-could-improve">
+
+                <h2>What Could Improve?</h2>
+
+                <p>
+                    Current computer vision systems can detect signs, but real-world environments
+                    still create challenges that can affect their reliability. Previous research
+                    has explored many of these problems, but there are still opportunities to
+                    improve mobile sign detection.
+                </p>
+
+                <p>
+                    Improvements could come from better computer vision models,
+                    better use of mobile camera sensors, more efficient models,
+                    and systems that allow the user to control what information
+                    they want to receive.
+                </p>
+
+            </section>
+
+
+            <!-- Small Signs -->
+            <section class="content-section" id="small-signs">
+
+                <h2>1. Better Detection of Small Signs</h2>
+
+                <p>
+                    One important problem is detecting signs that are far away
+                    from the camera. When a sign is small in an image, there are
+                    fewer pixels available for the computer vision model to use.
+                    This makes it harder to recognize the sign correctly. <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    Future systems could use better multi-scale feature
+                    extraction to detect both large and very small objects.
+                    Research such as TSingNet focuses on scale-aware features
+                    for traffic signs of different sizes. <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Viewpoint and Occlusion -->
+            <section class="content-section" id="angles-occlusion">
+
+                <h2>2. Handling Angles and Occlusion</h2>
+
+                <p>
+                    Signs are not always viewed straight from the front. A
+                    smartphone user may approach a sign from the side, causing
+                    the sign to appear distorted or smaller in the image.
+                </p>
+
+                <p>
+                    Objects such as people, doors, furniture, or other signs can
+                    also partially block the sign. Future detection systems need
+                    to use the visible parts of a sign instead of depending on
+                    seeing the entire sign.
+                </p>
+
+                <p>
+                    This connects to research on occlusion handling and
+                    arbitrary viewpoints, where computer vision systems try to
+                    reason about objects even when parts of them are hidden or the object is viewed from an
+                    unusual direction. <a href="bibliography.html#source5">[5]</a>
+                    <a href="bibliography.html#source6">[6]</a>
+                </p>
+
+            </section>
+
+            <section class="content-section" id="complex-environments">
+
+                <h2>3. Better Performance in Complex Environments</h2>
+
+                <p>
+                    Real environments can contain many objects, signs, posters, doors,
+                    advertisements, and pieces of text at the same time. This can make
+                    it difficult for a computer vision system to determine which
+                    objects are actually relevant signs.
+                </p>
+
+                <p>
+                    Future systems could use more information about the surrounding
+                    scene to determine whether a detected object is likely to be a
+                    useful sign. Context-aware methods such as those used in TSingNet
+                    are one example of using information around an object to improve
+                    detection. <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Mobile Efficiency -->
+            <section class="content-section" id="mobile-efficiency">
+
+                <h2>4. More Efficient Models for Phones</h2>
+
+                <p>
+                    A computer vision model that works well on a powerful
+                    computer may be too slow or require too much processing
+                    power for a smartphone. This creates a challenge for systems that need to analyze camera
+                    frames in real time.
+                </p>
+
+                <p>
+                    Future systems could use lightweight object detection
+                    models that require less memory and computation. This would
+                    allow more of the processing to happen directly on the
+                    phone and could make real-time detection more practical.
+                </p>
+
+                <p>
+                    On-device processing could also reduce the delay caused by
+                    sending camera images to a remote server. However, the model still needs
+                    to balance speed, accuracy, and available mobile resources.
+                    <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Camera and Panorama -->
+            <section class="content-section" id="better-camera">
+
+                <h2>5. Better Use of the Camera</h2>
+
+                <p>
+                    Instead of only analyzing the image directly in front of
+                    the user, a future system could make better use of the
+                    smartphone camera and sensors.
+                </p>
+
+                <p>
+                    One idea suggested by researcher James Coughlan is to have
+                    the user stand still for a moment and capture a panorama.
+                    The system could then analyze the panorama for signs and
+                    tell the user the direction in which each sign was found. <a
+                        href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <p>
+                    This could help solve the limited field-of-view problem
+                    because the system would be able to examine a much wider
+                    area instead of relying on one camera frame. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- User Selected Signs -->
+            <section class="content-section" id="user-choice">
+
+                <h2>6. Letting the User Choose What to Find</h2>
+
+                <p>
+                    Another important improvement would be reducing false detections and
+                    unnecessary information. A system should not only find possible signs,
+                    but also determine which detections are useful to the person using
+                    the system. This connects to the "visual spam" problem identified by
+                    James Coughlan. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <p>
+                    Coughlan suggested an approach where the user could request a specific
+                    type of sign, such as a restroom or elevator sign. The system could
+                    then continuously monitor the camera feed for that particular sign and
+                    provide feedback when it is detected. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <!-- User choice diagram -->
+                <figure class="tutorial-image">
+                    <img src="images/letting_user.jpeg" alt="Example of a user choosing which sign to detect">
+                    <figcaption>
+                        Example of a user choosing which type of sign the system should detect.
+                        Diagram created by Vanessa Rodriguez.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    This could reduce what Coughlan described as "visual spam"
+                    and make the system more useful in busy environments. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- On Device vs Cloud -->
+            <section class="content-section" id="hybrid-processing">
+
+                <h2>7. Combining On-Device and Cloud Processing</h2>
+
+                <div class="comparison-grid">
+
+                    <div class="topic-card">
+
+                        <h3>On Device</h3>
+
+                        <p>
+                            Processing happens directly on the smartphone.
+                            This can reduce communication delays and allows the
+                            system to work without constantly sending images
+                            over the internet.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Cloud</h3>
+
+                        <p>
+                            A remote server can provide more computing power for
+                            larger or more complicated models. However, sending
+                            images to the cloud can introduce latency and
+                            requires a network connection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    A hybrid system could use a lightweight model on the phone
+                    for immediate detection and use a more powerful remote
+                    model when additional analysis is needed. This could provide a balance between
+                    fast response and more detailed processing.
+                </p>
+
+            </section>
+
+
+            <!-- Researcher Perspective -->
+            <section class="content-section" id="researcher">
+
+                <h2>Researcher Perspective</h2>
+
+                <p>
+                    I contacted James Coughlan, one of the researchers who worked on previous
+                    sign recognition and indoor navigation research. He explained that improving
+                    mobile sign recognition involves more than just the detection model. Camera
+                    limitations, processing limitations, and deciding which information is useful
+                    to the user are also important challenges. [8]
+                </p>
+
+                <p>
+                    His response shows that future accessibility systems need to consider the
+                    entire system, including the camera, computer vision model, processing,
+                    and user interface. [8]
+                </p>
+
+            </section>
+
+
+            <!-- Research Labs -->
+            <section class="content-section" id="research-labs">
+
+                <h2>Research Labs and Future Research</h2>
+
+                <p>
+                    Research on accessible navigation also continues in
+                    university research labs. One example is Carnegie Mellon
+                    University's Robotics Institute, which has worked on
+                    assistive navigation technologies for people who are blind
+                    or have low vision. <a href="bibliography.html#source9">[9]</a>
+                </p>
+
+                <p>
+                    CMU projects have explored smartphone-based navigation,
+                    computer vision, robotics, localization, and human-robot
+                    interaction. For example, the NavPal project focused on
+                    smartphone-based navigation assistance and tools for
+                    navigating unfamiliar indoor environments. <a href="bibliography.html#source9">[9]</a>
+                </p>
+
+                <p>
+                    More recent work such as PathFinder has explored navigation
+                    in unfamiliar buildings without relying on prebuilt maps.
+                    The researchers found that intersections and signs were
+                    important information for navigation and developed a system
+                    that detects and communicates this information to users. <a
+                        href="bibliography.html#source9">[10]</a>
+                </p>
+
+                <p>
+                    CMU research has also continued to investigate how
+                    assistive robots and people can share control during
+                    navigation. A 2026 CMU study examined how blind participants
+                    made decisions about when to follow robotic guidance and
+                    when to navigate independently in changing environments. <a
+                        href="bibliography.html#source9">[11]</a>
+                </p>
+
+                <p>
+                    This type of research is related to mobile sign detection
+                    because detecting a sign is only one part of the larger
+                    problem. A useful accessibility system also needs to
+                    understand the user's surroundings and communicate useful
+                    information at the right time.
+                </p>
+
+            </section>
+
+
+            <!-- Future System -->
+            <section class="content-section" id="future-system">
+
+                <h2>A Possible Future System</h2>
+
+                <p>
+                    Based on the research discussed throughout this tutorial, one
+                    possible future system could combine several of these improvements
+                    into a single mobile accessibility tool.
+                </p>
+                <!-- Future system diagram -->
+                <figure class="tutorial-image">
+                    <img src="images/future_pipeline.jpeg" alt="Future mobile sign detection system pipeline">
+                    <figcaption>
+                        Possible future system combining camera input, sign detection,
+                        filtering, location, and user feedback. Diagram created by Vanessa Rodriguez.
+                    </figcaption>
+                </figure>
+
+                <div class="intro-pipeline">
+
+                    <div class="pipeline-step">
+
+                        <h3>1. Camera</h3>
+
+                        <p>
+                            Capture the surrounding environment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>2. Detection</h3>
+
+                        <p>
+                            Find possible signs in the image or video.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>3. Filtering</h3>
+
+                        <p>
+                            Focus on the type of sign requested by the user.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>4. Location</h3>
+
+                        <p>
+                            Determine where the sign is located relative to
+                            the user.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>5. Feedback</h3>
+
+                        <p>
+                            Tell the user where the sign is and provide
+                            information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Conclusion -->
+            <section class="goal-section" id="future-direction">
+
+                <h2>Future Direction</h2>
+
+                <p>
+                    The future of mobile sign detection is not just about
+                    detecting more signs. A useful system needs to work in
+                    difficult real-world situations, use limited mobile
+                    resources, and provide information that is actually useful
+                    to the person using it.
+                </p>
+
+                <p>
+                    Combining improved detection, efficient mobile processing, better camera
+                    coverage, and user-controlled information could help move sign detection
+                    closer to practical accessibility tools. <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source5">[5]</a>
+                    <a href="bibliography.html#source6">[6]</a>
+                    <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <a class="button" href="interactive.html">
+                    Continue to Interactive Section →
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            CS 663 Research Tutorial — Mobile Sign Detection
+        </p>
+
+        <p>
+            Vanessa Rodriguez
+        </p>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Introduction | Mobile Sign Detection</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="navbar subpage-navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="introduction.html" class="active">Intro</a>
+                <a href="mobile-cameras.html">Mobile Cameras</a>
+                <a href="techniques.html">Techniques</a>
+                <a href="research.html">Research</a>
+                <a href="difficult-scenarios.html">Difficult Scenarios</a>
+                <a href="limitations.html">Limitations</a>
+                <a href="future.html">Future</a>
+                <a href="interactive.html">Quiz</a>
+                <a href="bibliography.html">Bibliography</a>
+
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="page-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="side-menu">
+
+            <a href="index.html" class="side-title">
+                MOBILE SIGN DETECTION
+            </a>
+
+            <div class="side-links">
+
+                <a href="#why-sign-detection">
+                    Why Sign Detection Matters
+                </a>
+
+                <a href="#detection-reading">
+                    Detection vs. Reading
+                </a>
+
+                <a href="#pipeline">
+                    Sign Detection Pipeline
+                </a>
+
+                <a href="#main-challenge">
+                    The Main Challenge
+                </a>
+
+                <a href="#difficult">
+                    What Makes Sign Detection Difficult
+                </a>
+
+                <a href="#next">
+                    What Comes Next?
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+
+        <!-- Right Side: Page Content -->
+        <div class="page-content">
+
+            <!-- Page Audio -->
+            <section class="audio-section">
+
+                <div class="audio-card">
+
+                    <div class="audio-icon">
+                        🎧
+                    </div>
+
+                    <div class="audio-content">
+
+                        <p class="audio-label">
+                            LISTEN TO THIS PAGE
+                        </p>
+
+                        <h3>
+                            Introduction to Sign Detection
+                        </h3>
+
+                        <p>
+                            Listen to a short introduction to the sign detection
+                            problem and why it is important for accessibility.
+                        </p>
+
+                        <audio controls>
+                            <source src="audio/intro.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <p class="course">CS 663 — Computer Vision</p>
+
+                <h1>Introduction to Sign Detection</h1>
+
+                <p>
+                    Understanding the problem before looking at the computer vision
+                    techniques used to solve it.
+                </p>
+
+            </section>
+
+
+            <!-- Why Sign Detection Matters -->
+            <section class="content-section" id="why-sign-detection">
+
+                <h2>Why Is Sign Detection Important?</h2>
+
+                <p>
+                    Signs are found throughout the environments people use every day.
+                    Examples include exit signs, bathroom signs, room numbers,
+                    elevator signs, and directional signs.
+                </p>
+
+                <p>
+                    For a person who is blind or has low vision, finding these signs
+                    can be difficult because they may not be easy to locate without
+                    visual information. A mobile camera combined with computer vision
+                    could help identify signs in the surrounding environment.
+                </p>
+
+                <p>
+                    However, simply being able to read text from an image is not enough.
+                    Before the text can be read, the system first needs to determine
+                    whether a sign is present and where it is located.
+                </p>
+
+            </section>
+
+
+            <!-- Detection vs. Reading -->
+            <section class="content-section" id="detection-reading">
+
+                <h2>Detecting a Sign vs. Reading a Sign</h2>
+
+                <p>
+                    It is important to separate sign detection from sign reading.
+                    These are two different computer vision problems.
+                </p>
+
+                <div class="comparison-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Sign Detection</h3>
+
+                        <p>
+                            The system looks at an image and determines whether a sign
+                            is present and where the sign is located.
+                        </p>
+
+                        <p>
+                            For example, a computer vision model could draw a bounding
+                            box around an exit sign.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Sign Reading</h3>
+
+                        <p>
+                            After a sign has been located, OCR or another recognition
+                            method can be used to determine what text appears on it.
+                        </p>
+
+                        <p>
+                            For example, OCR could read the word "EXIT" from a detected
+                            exit sign.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Pipeline -->
+            <section class="content-section" id="pipeline">
+
+                <h2>The Sign Detection Pipeline</h2>
+
+                <p>
+                    A mobile sign-reading system can contain several steps. The
+                    important part of this tutorial is the step where the system
+                    finds and locates the sign.
+                </p>
+
+                <div class="intro-pipeline">
+
+                    <div class="pipeline-step">
+
+                        <h3> 1 - Camera</h3>
+
+                        <p>
+                            A smartphone camera captures the surrounding environment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>2 - Image Frame</h3>
+
+                        <p>
+                            The camera provides an image or video frame for analysis.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>3 - Detection</h3>
+
+                        <p>
+                            The computer vision system searches for signs in the frame.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>4 - Location</h3>
+
+                        <p>
+                            A bounding box identifies where the sign is located.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>5 - Identification</h3>
+
+                        <p>
+                            The system can determine the type of sign that was detected.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>6 - Optional OCR</h3>
+
+                        <p>
+                            OCR can be used to read text after the sign has been found.
+                        </p>
+
+                    </div>
+
+
+                    <div class="arrow">↓</div>
+
+
+                    <div class="pipeline-step">
+
+                        <h3>7 - User Information</h3>
+
+                        <p>
+                            The system can provide information about the detected sign.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Main Challenge -->
+            <section class="question-section" id="main-challenge">
+
+                <h2>The Main Challenge</h2>
+
+                <p>
+                    Detecting a sign is relatively straightforward when the sign is
+                    large, clearly visible, facing the camera, and separated from the
+                    background.
+                </p>
+
+                <p>
+                    Real-world environments are much more difficult. A sign may be
+                    far away, very small, viewed from an angle, partially blocked by
+                    another object, affected by lighting, or surrounded by many other
+                    objects and signs.
+                </p>
+
+                <p>
+                    This leads to the main question of this tutorial:
+                </p>
+
+                <p>
+                    <strong>
+                        How can computer vision detect and locate signs from a mobile
+                        camera when the signs are viewed from different angles,
+                        partially blocked, far away, small, or surrounded by complex
+                        backgrounds?
+                    </strong>
+                </p>
+
+            </section>
+
+
+            <!-- What Makes It Difficult -->
+            <section class="content-section" id="difficult">
+
+                <h2>What Makes Sign Detection Difficult?</h2>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Different Angles</h3>
+
+                        <p>
+                            A sign may not face the camera directly. Perspective can
+                            change the shape and appearance of the sign.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Occlusion</h3>
+
+                        <p>
+                            Objects or people may partially block a sign, leaving only
+                            part of the sign visible.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Small or Distant Signs</h3>
+
+                        <p>
+                            A sign that is far away may only occupy a small number of
+                            pixels in the camera image.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Complex Backgrounds</h3>
+
+                        <p>
+                            Other objects, decorations, windows, and printed text can
+                            make it harder to distinguish a sign from its surroundings.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Lighting</h3>
+
+                        <p>
+                            Bright light, shadows, darkness, and reflections can change
+                            how a sign appears in an image.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Camera Movement</h3>
+
+                        <p>
+                            Movement can cause blur and make signs more difficult to
+                            detect, especially when the camera is being used while
+                            walking.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Tutorial Roadmap -->
+            <section class="goal-section" id="next">
+
+                <h2>What Comes Next?</h2>
+
+                <p>
+                    Now that the problem has been defined, the next section looks at
+                    how mobile cameras capture the environment and why camera
+                    characteristics such as viewpoint, distance, field of view, and
+                    movement matter for sign detection.
+                </p>
+
+                <a href="mobile-cameras.html" class="button">
+                    Next: Mobile Cameras →
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            CS 663 — Computer Vision
+        </p>
+
+        <p>
+            Mobile Sign Detection | Vanessa Rodriguez
+        </p>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>
