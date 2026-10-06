@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Previous Research | Mobile Sign Detection</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar subpage-navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-links" id="navLinks">
+                <a href="introduction.html">Intro</a>
+                <a href="mobile-cameras.html">Mobile Cameras</a>
+                <a href="techniques.html">Techniques</a>
+                <a href="research.html" class="active">Research</a>
+                <a href="difficult-scenarios.html">Difficult Scenarios</a>
+                <a href="limitations.html">Limitations</a>
+                <a href="future.html">Future</a>
+                <a href="interactive.html">Quiz</a>
+                <a href="bibliography.html">Bibliography</a>
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="page-layout">
+
+        <!-- Left Side: Sidebar -->
+        <aside class="side-menu">
+
+            <a href="index.html" class="side-title">
+                MOBILE SIGN DETECTION
+            </a>
+
+            <div class="side-links">
+                <a href="#research-overview">What Does Previous Research Show?</a>
+                <a href="#research-1">Real-Time Indoor Sign Detection</a>
+                <a href="#research-2">Indoor Navigation Using Sign Recognition</a>
+                <a href="#research-3">Small and Occluded Traffic Signs</a>
+                <a href="#research-4">Traffic-Sign Detection in the Wild</a>
+                <a href="#research-5">Signs Under Occlusion</a>
+                <a href="#research-6">Different Viewpoints</a>
+                <a href="#research-7">Earlier Indoor Sign and Door Detection</a>
+                <a href="#datasets">Datasets and Image Types</a>
+                <a href="#comparison">Research Comparison</a>
+                <a href="#results">Results and Detection Performance</a>
+                <a href="#what-we-learn">What Can We Learn?</a>
+                <a href="#researcher">Researcher Perspective</a>
+                <a href="#next">What Comes Next?</a>
+            </div>
+
+        </aside>
+
+
+        <!-- Right Side: Page Content -->
+        <div class="page-content">
+
+            <!-- Page Audio -->
+            <section class="audio-section">
+
+                <div class="audio-card">
+
+                    <div class="audio-icon">
+                        🎧
+                    </div>
+
+                    <div class="audio-content">
+
+                        <p class="audio-label">
+                            LISTEN TO THIS PAGE
+                        </p>
+
+                        <h3>
+                            Previous Research on Sign Detection
+                        </h3>
+
+                        <p>
+                            Listen to an overview of previous research on indoor signs,
+                            traffic signs, small signs, occlusion, and accessible navigation.
+                        </p>
+
+                        <audio controls>
+                            <source src="audio/research.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <p class="course">CS 663 — Computer Vision</p>
+
+                <h1>Previous Research</h1>
+
+                <p>
+                    How researchers have approached sign detection in indoor and
+                    outdoor environments.
+                </p>
+
+            </section>
+
+
+            <!-- Introduction -->
+            <section class="content-section" id="research-overview">
+
+                <h2>What Does Previous Research Show?</h2>
+
+                <p>
+                    Researchers have used many different computer vision approaches
+                    to detect signs. Some research focuses on indoor navigation,
+                    while other work focuses on traffic signs and difficult outdoor
+                    environments.
+                </p>
+
+
+
+                <figure class="tutorial-image">
+                    <img src="images/research_approaches.jpeg"
+                        alt="Overview of approaches used in sign detection research">
+                    <figcaption>Overview of approaches used in previous sign detection research. Diagram created by
+                        Vanessa Rodriguez.</figcaption>
+                </figure>
+
+
+
+                <p>
+                    Looking at several studies helps show how the problem has changed
+                    over time. Earlier systems often relied on manually designed
+                    image-processing features, while newer systems increasingly use
+                    deep-learning-based detection.
+                </p>
+
+                <p>
+                    The studies below are especially useful because they address
+                    different challenges such as small signs, occlusion, camera
+                    viewpoint, indoor navigation, and real-world backgrounds.
+                </p>
+
+            </section>
+
+
+            <!-- Research 1 -->
+            <section class="content-section" id="research-1">
+
+                <h2>1. Real-Time Indoor Sign Detection</h2>
+
+                <h3>
+                    Cheraghi, Fusco, and Coughlan — 2021
+                </h3>
+
+                <p>
+                    In <em>Real-Time Sign Detection for Accessible Indoor
+                        Navigation</em>, the researchers investigated how computer vision
+                    could be used to help people who are blind or have low vision
+                    navigate indoor environments.
+                </p>
+
+                <p>
+                    Their system used a YOLO-based object detector to identify indoor
+                    signs. The researchers were also interested in the problem of
+                    using a smartphone while the user is moving through an
+                    environment. <a href="bibliography.html#source1">[1]</a>
+                </p>
+
+                <p>
+                    One part of their approach used information from the smartphone's
+                    inertial sensors to compensate for camera roll. This is useful
+                    because a phone may not always be held perfectly level while a
+                    person is walking. <a href="bibliography.html#source1">[1]</a>
+                </p>
+                </p>
+
+                <p>
+                    The system also considered the location and orientation of signs
+                    so that detected signs could be useful for navigation instead of
+                    simply being identified in an image. <a href="bibliography.html#source1">[1]</a>
+                </p>
+
+                <div class="question-section">
+
+                    <h3>Why is this important?</h3>
+
+                    <p>
+                        This research connects sign detection to a real mobile
+                        accessibility application. The goal is not simply to detect
+                        an object but to provide useful information about the user's
+                        surrounding environment.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Research 2 -->
+            <section class="content-section" id="research-2">
+
+                <h2>2. Indoor Navigation Using Sign Recognition</h2>
+
+                <h3>
+                    Fusco, Cheraghi, and Coughlan — 2020
+                </h3>
+
+                <p>
+                    In <em>An Indoor Navigation App using Computer Vision and Sign
+                        Recognition</em>, the researchers developed the iNavigate system
+                    for indoor navigation.
+                </p>
+
+                <p>
+                    The system used U-Net semantic segmentation to identify exit
+                    signs. Instead of only producing a bounding box, segmentation
+                    creates a mask that identifies the pixels belonging to the
+                    detected object. <a href="bibliography.html#source2">[2]</a>
+                </p>
+
+                <p>
+                    The system also used Apple's ARKit visual-inertial odometry to
+                    track the relative position and orientation of the camera.
+                    This information could then be combined with an indoor floorplan
+                    and navigation system. <a href="bibliography.html#source2">[2]</a>
+                </p>
+
+                <p>
+                    This demonstrates how sign detection can become part of a larger
+                    computer vision system. The detected sign can provide information
+                    that is combined with the user's estimated position and the
+                    building layout.
+                </p>
+
+            </section>
+
+
+            <!-- Research 3 -->
+            <section class="content-section" id="research-3">
+
+                <h2>3. Detecting Small and Occluded Traffic Signs</h2>
+
+                <h3>
+                    Liu et al. — 2021
+                </h3>
+
+                <p>
+                    Liu and colleagues developed TSingNet, a system designed for
+                    traffic sign detection in difficult real-world conditions. <a
+                        href="bibliography.html#source3">[3]</a>
+                </p>
+
+                <p>
+                    One of the important problems addressed by this research is that
+                    traffic signs can be very small in an image. They can also be
+                    partially hidden by other objects.
+                </p>
+
+                <p>
+                    TSingNet uses scale-aware feature processing to help detect signs
+                    of different sizes. The approach also uses contextual information
+                    to help the model understand the surrounding image. <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Small Signs</h3>
+
+                        <p>
+                            Multi-scale processing helps the system handle signs that
+                            occupy different amounts of the image.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Context</h3>
+
+                        <p>
+                            Information surrounding the sign can provide additional
+                            clues for detection.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Occlusion</h3>
+
+                        <p>
+                            The system is designed to improve detection when parts
+                            of a sign are hidden.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Research 4 -->
+            <section class="content-section" id="research-4">
+
+                <h2>4. Traffic-Sign Detection in the Wild</h2>
+
+                <h3>
+                    Zhu et al. — CVPR 2016
+                </h3>
+
+                <p>
+                    Zhu and colleagues studied traffic-sign detection and
+                    classification using the Tsinghua-Tencent 100K (TT100K) dataset.
+                    The dataset was created from 100,000 Tencent Street View panoramas
+                    and contains about 100,000 images with 30,000 traffic-sign
+                    instances. The images include different lighting and weather
+                    conditions, and the signs are labeled with their class, bounding
+                    box, and pixel mask. <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    This type of dataset is useful because it represents signs in
+                    real-world street scenes rather than showing signs against simple
+                    or controlled backgrounds. It also includes signs that can occupy
+                    only a small part of an image. <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    Their work used a deep-learning-based detection system designed
+                    to handle signs at different scales. The system used multiple
+                    feature map resolutions and anchor boxes to detect objects of
+                    different sizes.
+                </p>
+
+                <p>
+                    This research is useful for understanding why scale is important
+                    in sign detection. A detector that only works well for large
+                    objects can have difficulty when a sign is far away and occupies
+                    only a small region of the image.
+                </p>
+
+                <div class="question-section">
+
+                    <h3>Connection to Mobile Cameras</h3>
+
+                    <p>
+                        The scale problem in traffic-sign detection is also relevant
+                        to mobile sign detection. When a person is far from a sign,
+                        the sign may become very small in the camera frame.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Research 5 -->
+            <section class="content-section" id="research-5">
+
+                <h2>5. Detecting Signs Under Occlusion</h2>
+
+                <h3>
+                    Rehman et al. — 2017
+                </h3>
+
+                <p>
+                    Rehman and colleagues studied traffic-sign detection when signs
+                    are partially blocked. <a href="bibliography.html#source5">[5]</a>
+                </p>
+
+                <p>
+                    Their D-patches approach uses local image patches to find
+                    discriminative parts of a traffic sign. Instead of depending
+                    completely on seeing the entire sign, the system can use visible
+                    portions of the sign as evidence.
+                </p>
+
+                <p>
+                    The system combines evidence from different parts of the image
+                    to make a detection decision. This is particularly relevant to
+                    real-world environments because signs are not always completely
+                    visible.
+                </p>
+
+                <p>
+                    For example, a tree branch, vehicle, person, or another object
+                    could block part of a sign while leaving enough of the sign
+                    visible for detection.
+                </p>
+
+            </section>
+
+
+            <!-- Research 6 -->
+            <section class="content-section" id="research-6">
+
+                <h2>6. Detection from Different Viewpoints</h2>
+
+                <h3>
+                    Hsiao and Hebert — 2012
+                </h3>
+
+                <p>
+                    Hsiao and Hebert investigated object detection when objects are
+                    viewed from different viewpoints and may be partially occluded.
+                    <a href="bibliography.html#source6">[6]</a>
+                </p>
+
+                <p>
+                    Their work is not specifically limited to signs, but it provides
+                    useful ideas for understanding one of the main challenges in this
+                    tutorial: a camera may observe an object from an unusual angle.
+                </p>
+
+                <p>
+                    Their approach considers three-dimensional object information
+                    and visibility when making detection decisions.
+                </p>
+
+                <div class="question-section">
+
+                    <h3>Why does viewpoint matter?</h3>
+
+                    <p>
+                        A sign that is easy to recognize from the front may look very
+                        different when viewed from the side. A useful detection system
+                        therefore needs to handle more than one ideal camera
+                        viewpoint.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Research 7 -->
+            <section class="content-section" id="research-7">
+
+                <h2>7. Earlier Indoor Sign and Door Detection</h2>
+
+                <h3>
+                    Wang, Yang, and Tian — 2013
+                </h3>
+
+                <p>
+                    Wang and colleagues investigated signage and door detection for
+                    blind navigation and wayfinding. <a href="bibliography.html#source7">[7]</a>
+                </p>
+
+                <p>
+                    Their approach considered traditional computer vision techniques
+                    including edge detection, Hough transforms, color and texture
+                    segmentation, and feature-based classifiers. <a href="bibliography.html#source7">[7]</a>
+                </p>
+
+                <p>
+                    The research also included text detection and OCR as part of a
+                    larger navigation system.
+                </p>
+
+                <p>
+                    This study is useful for comparing earlier traditional computer
+                    vision approaches with newer deep-learning-based methods.
+                </p>
+
+            </section>
+
+            <!-- Datasets -->
+            <section class="content-section" id="datasets">
+
+                <h2>Datasets and Types of Sign Images</h2>
+
+                <p>
+                    The studies use different types of images depending on the
+                    problem they are trying to solve. Some researchers use indoor
+                    smartphone images, while others use outdoor traffic scenes.
+                    These differences are important because the appearance and
+                    difficulty of signs can change depending on the environment.
+                </p>
+
+                <figure class="tutorial-image">
+                    <img src="images/dataset_example.jpeg" alt="Examples of sign images used in research">
+                    <figcaption>Examples of different sign images and environments used in previous research. Diagram
+                        created by Vanessa Rodriguez.</figcaption>
+                </figure>
+
+                <p>
+                    Cheraghi and colleagues used images collected inside the
+                    Smith-Kettlewell building with an iPhone to evaluate real-time
+                    indoor sign detection. Their dataset included images of signs
+                    such as Exit, Restroom, Mask, and Fire Alarm signs. <a href="bibliography.html#source1">[1]</a>
+                </p>
+
+                <p>
+                    Other research uses large outdoor traffic-sign datasets.
+                    The TT100K dataset contains images from Tencent Street View
+                    panoramas and includes signs at different sizes and under
+                    different lighting and weather conditions. <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    TSingNet was evaluated using three challenging traffic-sign
+                    datasets: TT100K, STSD, and DFG. These datasets include
+                    difficult examples with scale variation, small signs, and
+                    occlusion. <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+                <p>
+                    These examples show why the dataset matters. A system trained
+                    only on clear, large signs may not perform as well when it is
+                    used on small, distant, partially blocked, or differently
+                    oriented signs.
+                </p>
+
+            </section>
+
+
+            <!-- Comparison -->
+            <section class="content-section" id="comparison">
+
+                <h2>Research Comparison</h2>
+
+                <div class="comparison-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Research</th>
+                                <th>Dataset / Images</th>
+                                <th>Main Problem</th>
+                                <th>Approach</th>
+                                <th>Difficult Condition</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Cheraghi et al. (2021)
+                                </td>
+                                <td>
+                                    iPhone images collected inside the
+                                    Smith-Kettlewell building
+                                </td>
+
+                                <td>
+                                    Indoor sign detection and navigation
+                                </td>
+
+                                <td>
+                                    YOLO-based detection and sensor information
+                                </td>
+
+                                <td>
+                                    Moving camera and camera orientation
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Fusco et al. (2020)
+                                </td>
+                                <td>
+                                    Indoor images of Exit signs
+                                </td>
+
+                                <td>
+                                    Indoor navigation
+                                </td>
+
+                                <td>
+                                    U-Net segmentation and visual-inertial tracking
+                                </td>
+
+                                <td>
+                                    Navigation in indoor environments
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Liu et al. (2021)
+                                </td>
+                                <td>
+                                    TT100K, STSD, and DFG traffic-sign
+                                    datasets
+                                </td>
+
+                                <td>
+                                    Traffic-sign detection
+                                </td>
+
+                                <td>
+                                    Scale-aware and context-aware features
+                                </td>
+
+                                <td>
+                                    Small and occluded signs
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Zhu et al. (2016)
+                                </td>
+
+                                <td>
+                                    TT100K traffic-sign dataset from
+                                    Tencent Street View images
+                                </td>
+                                <td>
+                                    Traffic-sign detection and classification
+                                </td>
+
+                                <td>
+                                    Deep-learning detection with multiple scales
+                                </td>
+
+                                <td>
+                                    Different sign sizes
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Rehman et al. (2017)
+                                </td>
+
+                                <td>
+                                    Traffic-sign images containing
+                                    partially occluded signs
+                                </td>
+
+                                <td>
+                                    Traffic-sign detection
+                                </td>
+
+                                <td>
+                                    D-patches using local discriminative
+                                    image patches
+                                </td>
+
+                                <td>
+                                    Partial occlusion
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Hsiao and Hebert (2012)
+                                </td>
+
+                                <td>
+                                    Object images viewed from different
+                                    viewpoints
+                                </td>
+
+                                <td>
+                                    Object detection under viewpoint
+                                    changes and occlusion
+                                </td>
+
+                                <td>
+                                    3D viewpoint and occlusion reasoning
+                                </td>
+
+                                <td>
+                                    Different viewpoints
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Wang et al. (2013)
+                                </td>
+
+                                <td>
+                                    Indoor images of doors and signage
+                                </td>
+
+                                <td>
+                                    Indoor signage and door detection
+                                </td>
+
+                                <td>
+                                    Traditional image processing and classifiers
+                                </td>
+
+                                <td>
+                                    Indoor environments
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- Results -->
+            <section class="content-section" id="results">
+
+                <h2>Results and Detection Performance</h2>
+
+                <p>
+                    The performance of a sign detection system can be measured in
+                    several ways. Two common measurements are precision and recall.
+                    Precision describes how many detected signs were actually correct,
+                    while recall describes how many of the signs that were present
+                    were successfully detected.
+                </p>
+
+                <p>
+                    Cheraghi and colleagues evaluated their YOLOv5-based indoor sign
+                    detector using 810 images collected inside the Smith-Kettlewell
+                    building. The detector achieved a precision of 0.97 and recall
+                    of 0.87 for Exit signs. For Restroom signs, precision was 1.00
+                    and recall was 0.48. Mask signs had a precision of 0.98 and
+                    recall of 0.52, while Fire Alarm signs had a precision of 0.97
+                    and recall of 0.67. <a href="bibliography.html#source1">[1]</a>
+                </p>
+
+                <figure class="tutorial-image">
+                    <img src="images/results_performance.png" alt="Comparison of sign detection performance">
+                    <figcaption>Comparison of reported precision and recall for indoor sign detection. Diagram created
+                        by Vanessa Rodriguez.</figcaption>
+                </figure>
+
+                <div class="question-section">
+
+                    <h3>What Do These Results Show?</h3>
+
+                    <p>
+                        The results show that high precision does not necessarily
+                        mean that the system finds every sign. For example, the
+                        Exit sign detector had high precision and relatively high
+                        recall, while the Restroom detector had perfect precision
+                        but detected less than half of the visible Restroom signs.
+                        This is important for a real-world accessibility system
+                        because missing a sign can be just as important as avoiding
+                        false detections.
+                    </p>
+
+                </div>
+
+                <p>
+                    Other studies also report improvements over previous approaches.
+                    TSingNet was evaluated on TT100K, STSD, and DFG and reported
+                    better detection and recognition performance than the state-of-
+                    the-art methods used for comparison in the study. <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+                <p>
+                    Zhu and colleagues also reported that their CNN-based approach
+                    was effective for detecting and classifying traffic signs in the
+                    TT100K dataset, which contains many small signs in realistic
+                    street scenes. <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+            </section>
+
+
+            <!-- What We Learn -->
+            <section class="content-section" id="what-we-learn">
+
+                <h2>What Can We Learn From These Studies?</h2>
+
+                <p>
+                    The research shows that sign detection is not one single problem.
+                    Different environments create different challenges.
+                </p>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Indoor Navigation</h3>
+
+                        <p>
+                            Indoor systems can combine sign detection with camera
+                            tracking, floorplans, and navigation information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Small Signs</h3>
+
+                        <p>
+                            Multi-scale features can help detectors identify signs
+                            that occupy only a small part of an image.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Occlusion</h3>
+
+                        <p>
+                            Local features and contextual information can help when
+                            parts of a sign are blocked.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Viewpoint</h3>
+
+                        <p>
+                            A sign may look different depending on the camera's
+                            position and viewing angle.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Researcher -->
+            <section class="question-section" id="researcher">
+
+                <h2>Researcher Perspective</h2>
+
+                <p>
+                    James Coughlan, one of the researchers associated with the indoor
+                    sign-detection work discussed above, also described several
+                    challenges in a 2026 email response for this tutorial.
+                </p>
+
+                <p>
+                    He identified small or distant signs, camera movement, motion
+                    blur, limited camera field of view, and the large amount of visual
+                    information in real environments as important challenges. <a
+                        href="bibliography.html#researcher">[8]</a>
+                </p>
+
+                <p>
+                    He also suggested that future systems could allow a user to
+                    request a specific type of sign, such as a restroom or elevator
+                    sign, instead of continuously reporting every piece of text or
+                    signage detected by the camera. <a href="bibliography.html#researcher">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Next -->
+            <section class="goal-section" id="next">
+
+                <h2>What Comes Next?</h2>
+
+                <p>
+                    The studies above show several ways researchers have approached
+                    sign detection. The next section focuses specifically on the
+                    difficult situations that can cause these systems to fail.
+                </p>
+
+                <a href="difficult-scenarios.html" class="button">
+                    Next: Difficult Scenarios →
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            CS 663 — Computer Vision
+        </p>
+
+        <p>
+            Mobile Sign Detection | Vanessa Rodriguez
+        </p>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Difficult Scenarios | Mobile Sign Detection</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar subpage-navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="introduction.html">Intro</a>
+                <a href="mobile-cameras.html">Mobile Cameras</a>
+                <a href="techniques.html">Techniques</a>
+                <a href="research.html">Research</a>
+                <a href="difficult-scenarios.html" class="active">Difficult Scenarios</a>
+                <a href="limitations.html">Limitations</a>
+                <a href="future.html">Future</a>
+                <a href="interactive.html">Quiz</a>
+                <a href="bibliography.html">Bibliography</a>
+
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="page-layout">
+
+        <!-- Sticky Sidebar -->
+        <aside class="side-menu">
+
+            <a href="index.html" class="side-title">
+                MOBILE SIGN DETECTION
+            </a>
+
+            <div class="side-links">
+
+                <a href="#easy-difficult">
+                    Easy vs. Difficult Images
+                </a>
+
+                <a href="#small-distant">
+                    Small and Distant Signs
+                </a>
+
+                <a href="#viewed-angle">
+                    Different Viewpoints and Angles
+                </a>
+
+                <a href="#occlusion">
+                    Partial Occlusion
+                </a>
+
+                <a href="#complex-backgrounds">
+                    Complex Backgrounds
+                </a>
+
+                <a href="#lighting">
+                    Lighting Conditions
+                </a>
+
+                <a href="#shapes-appearances">
+                    Different Shapes and Appearances
+                </a>
+
+                <a href="#motion-blur">
+                    Camera Movement and Motion Blur
+                </a>
+
+                <a href="#multiple-problems">
+                    Multiple Problems
+                </a>
+
+                <a href="#why-matters">
+                    Why These Scenarios Matter
+                </a>
+
+                <a href="#next">
+                    What Comes Next?
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Page Content -->
+        <div class="page-content">
+
+            <!-- Page Audio -->
+            <section class="audio-section">
+
+                <div class="audio-card">
+
+                    <div class="audio-icon">
+                        🎧
+                    </div>
+
+                    <div class="audio-content">
+
+                        <p class="audio-label">
+                            LISTEN TO THIS PAGE
+                        </p>
+
+                        <h3>
+                            Difficult Sign Detection Scenarios
+                        </h3>
+
+                        <p>
+                            Listen to how distance, viewpoints, occlusion, lighting,
+                            backgrounds, and camera movement can make sign detection difficult.
+                        </p>
+
+                        <audio controls>
+                            <source src="audio/difficult-scenarios.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <p class="course">CS 663 — Computer Vision</p>
+
+                <h1>Difficult Sign Detection Scenarios</h1>
+
+                <p>
+                    Why real-world conditions make sign detection more difficult
+                    than detecting a clear sign in an ideal image.
+                </p>
+
+            </section>
+
+
+            <!-- Introduction -->
+            <section class="content-section" id="easy-difficult">
+
+                <h2>The Difference Between an Easy and Difficult Image</h2>
+
+                <p>
+                    A computer vision system may have an easier time detecting a sign
+                    when the sign is large, clearly visible, facing the camera, and
+                    separated from the background.
+                    Real-world environments are rarely this simple. A person using a
+                    mobile camera may encounter signs that are far away, viewed from
+                    an angle, partially blocked, poorly lit, or surrounded by many
+                    other objects.
+                    These conditions can make the sign look very different from the
+                    examples that a detection model may have seen during training.
+                </p>
+
+            </section>
+
+
+            <!-- Scenario 1 -->
+            <section class="content-section" id="small-distant">
+
+                <h2>1. Small and Distant Signs</h2>
+
+                <p>
+                    One of the major challenges is detecting signs that are far away
+                    from the camera. As the distance increases, the sign takes up
+                    fewer pixels in the image.
+                    Important details may disappear when the sign becomes very small.
+                    The detector then has less visual information available to decide
+                    whether the object is actually a sign.
+                </p>
+
+                <p>
+                    Liu et al. specifically studied the problem of small traffic
+                    signs and developed scale-aware features to help detect signs
+                    appearing at different sizes. <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+                <p>
+                    Zhu et al. also used multiple feature-map scales for traffic-sign
+                    detection, showing why detecting objects at different sizes is
+                    important. Their TT100K dataset also contains many small traffic
+                    signs in realistic street scenes. <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Large Sign</h3>
+
+                        <p>
+                            A nearby sign occupies a larger portion of the image and
+                            provides more pixels for detection.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Small Sign</h3>
+
+                        <p>
+                            A distant sign occupies fewer pixels and can be harder to
+                            separate from the background.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Scenario 2 -->
+            <section class="content-section" id="viewed-angle">
+
+                <h2>2. Different Viewpoints and Angles</h2>
+
+                <p>
+                    A sign does not always face the camera directly. If the camera
+                    approaches from the side, the sign can appear distorted because
+                    of perspective.
+                    A rectangular sign may appear much narrower from a side angle.
+                    At a more extreme angle, part of the sign may become difficult to
+                    see.
+                </p>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Front View</h3>
+
+                        <p>
+                            Most of the sign is visible and its shape is easier to
+                            identify.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Moderate Angle</h3>
+
+                        <p>
+                            The sign becomes distorted and its visible shape changes.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Extreme Angle</h3>
+
+                        <p>
+                            A large portion of the sign may no longer be visible to
+                            the camera.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question-section">
+
+                    <h3>Research Connection</h3>
+
+                    <p>
+                        Hsiao and Hebert studied object detection under arbitrary
+                        viewpoints and considered visibility and three-dimensional
+                        information when detecting objects. <a href="bibliography.html#source5">[6]</a>
+                    </p>
+
+                    <p>
+                        This provides a useful example of why a computer vision
+                        system cannot always assume that an object will appear from
+                        one standard viewpoint.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- Scenario 3 -->
+            <section class="content-section" id="occlusion">
+
+                <h2>3. Partial Occlusion</h2>
+
+                <p>
+                    Occlusion occurs when another object blocks part of a sign.
+                    Examples include people, furniture, vehicles, or other objects
+                    in the environment.
+                </p>
+
+                <p>
+                    Even when only part of a sign is visible, the computer vision
+                    system still needs to determine whether the visible area belongs
+                    to a sign. The less of the sign that is visible, the less visual
+                    information the system has available.
+                </p>
+
+                <p>
+                    Previous research has shown that local features and surrounding
+                    context can help when signs are partially blocked.
+                    <a href="bibliography.html#source5">[5]</a>
+                    <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Scenario 4 -->
+            <section class="content-section" id="complex-backgrounds">
+
+                <h2>4. Complex Backgrounds</h2>
+
+                <p>
+                    A sign can be difficult to detect when the surrounding
+                    environment contains many objects, colors, patterns, or other
+                    pieces of text.
+                </p>
+
+                <p>
+                    For example, an indoor hallway might contain room signs,
+                    advertisements, posters, decorations, doors, windows, and
+                    emergency information.
+                </p>
+
+                <figure class="tutorial-image">
+                    <img src="images/false_positive.jpg"
+                        alt="Different environments where signs may need to be detected">
+                    <figcaption>Examples of different environments where signs may appear. Diagram created by Vanessa
+                        Rodriguez.</figcaption>
+                </figure>
+
+                <p>
+                    A system that searches for anything containing text could produce
+                    many possible detections, even when most of those objects are not
+                    useful to the user.
+                </p>
+
+
+                <div class="question-section">
+
+                    <h3>Visual Spam</h3>
+
+                    <p>
+                        James Coughlan described this problem as "visual spam." An
+                        environment can contain many signs and instances of printed
+                        text, creating the problem of deciding which information is
+                        actually important to the user. <a href="bibliography.html#source8">[8]</a>
+                    </p>
+
+                    <p>
+                        This means that successful sign detection is not only about
+                        finding more objects. The system also needs to determine
+                        which detected signs are relevant.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Scenario 5 -->
+            <section class="content-section" id="lighting">
+
+                <h2>5. Lighting Conditions</h2>
+
+                <p>
+                    Lighting can change the appearance of a sign in a camera image.
+                    A sign may look different in bright sunlight, a shadow, a dark
+                    hallway, or under artificial lighting.
+                </p>
+
+                <p>
+                    Reflections can also make parts of a sign difficult to see.
+                    Changes in brightness and contrast can affect traditional
+                    techniques such as color thresholding and edge detection.
+                </p>
+
+                <p>
+                    Research datasets such as TT100K include traffic-sign images
+                    collected under different lighting and weather conditions, which
+                    helps researchers test how detection systems perform in less
+                    controlled environments. <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    Deep-learning systems can also be affected if the training data
+                    does not contain enough examples of the lighting conditions that
+                    occur in the real environment.
+                </p>
+
+            </section>
+
+            <!-- Scenario 6 -->
+            <section class="content-section" id="shapes-appearances">
+
+                <h2>6. Different Shapes, Sizes, and Appearances</h2>
+
+                <p>
+                    Signs do not all look the same. They can have different shapes,
+                    colors, sizes, fonts, symbols, and designs depending on their
+                    purpose and location. For example, an Exit sign, Restroom sign, Fire Alarm sign, and
+                    traffic sign can have very different visual appearances.
+                </p>
+
+                <figure class="tutorial-image">
+                    <img src="images/different_signs.jpg" alt="Different signs we may encounter in our everyday lives">
+                    <figcaption>Examples of signs with different shapes, color, and sizes. Diagram created by Vanessa
+                        Rodriguez.</figcaption>
+                </figure>
+
+                <p>
+                    This means a detection system cannot rely on one simple shape
+                    or color to identify every type of sign. Previous research has
+                    used different approaches to handle this variation, including
+                    learned features, multiple scales, context, and object
+                    classification. <a href="bibliography.html#source1">[1]</a>
+                    <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    Cheraghi et al. evaluated different types of signs, including
+                    Exit, Restroom, Mask, and Fire Alarm signs, rather than treating
+                    every sign as having the same appearance.
+                    <a href="bibliography.html#source1">[1]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Scenario 7 -->
+            <section class="content-section" id="motion-blur">
+
+                <h2>7. Camera Movement and Motion Blur</h2>
+
+                <p>
+                    A person may hold a smartphone while walking. Movement can cause
+                    the camera image to become blurred, especially when the camera
+                    moves quickly.
+                </p>
+
+                <p>
+                    Motion blur can remove details that a detection model would
+                    normally use to identify a sign.
+                </p>
+
+                <p>
+                    Coughlan specifically identified camera movement and motion blur
+                    as challenges for real-time sign recognition. He also noted that
+                    motion blur can be especially problematic in darker settings. <a
+                        href="bibliography.html#source8">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Multiple Problems -->
+            <section class="content-section" id="multiple-problems">
+
+                <h2>Real Environments Can Combine Multiple Problems</h2>
+
+                <p>
+                    The most difficult situations may involve several problems at the
+                    same time.
+                </p>
+
+                <p>
+                    For example, a person could be walking down a dark hallway while
+                    holding a smartphone. An exit sign might be far away, partially
+                    blocked by another person, and viewed from an angle.
+                </p>
+
+                <figure class="tutorial-image">
+                    <img src="images/environments.jpg" alt="Different environments where signs may need to be detected">
+                    <figcaption>Examples of different environments where signs may appear. Diagram created by Vanessa
+                        Rodriguez.</figcaption>
+                </figure>
+
+                <p>
+                    The resulting image could therefore contain several challenges:
+                </p>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Small</h3>
+
+                        <p>
+                            The sign is far away.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Angled</h3>
+
+                        <p>
+                            The camera is not directly facing the sign.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Occluded</h3>
+
+                        <p>
+                            Another object blocks part of the sign.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Dark</h3>
+
+                        <p>
+                            There is not enough light in the environment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Moving</h3>
+
+                        <p>
+                            The camera is moving while the image is captured.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Cluttered</h3>
+
+                        <p>
+                            Other objects compete with the sign for the detector's
+                            attention.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Why This Matters -->
+            <section class="question-section" id="why-matters">
+
+                <h2>Why These Scenarios Matter</h2>
+
+                <p>
+                    A system that detects signs only in clear and controlled images
+                    may not be reliable when used in the real world.
+                </p>
+
+                <p>
+                    This is why previous research has focused on problems such as
+                    scale, occlusion, viewpoint, context, and camera movement. <a
+                        href="bibliography.html#source3">[3]</a>
+                    Testing these conditions provides a better understanding of the
+                    strengths and weaknesses of a sign detection system.
+                </p>
+
+            </section>
+
+
+            <!-- Next -->
+            <section class="goal-section" id="next">
+
+                <h2>What Comes Next?</h2>
+
+                <p>
+                    The next section looks at what current sign detection systems
+                    can accomplish, where they still have limitations, and the
+                    challenges involved in putting these systems on mobile devices.
+                </p>
+
+                <a href="limitations.html" class="button">
+                    Next: Successes and Limitations →
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            CS 663 — Computer Vision
+        </p>
+
+        <p>
+            Mobile Sign Detection | Vanessa Rodriguez
+        </p>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>

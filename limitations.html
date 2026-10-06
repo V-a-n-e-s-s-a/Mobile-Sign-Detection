@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Successes and Limitations | Mobile Sign Detection</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar subpage-navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="introduction.html">Intro</a>
+                <a href="mobile-cameras.html">Mobile Cameras</a>
+                <a href="techniques.html">Techniques</a>
+                <a href="research.html">Research</a>
+                <a href="difficult-scenarios.html">Difficult Scenarios</a>
+                <a href="limitations.html" class="active">Limitations</a>
+                <a href="future.html">Future</a>
+                <a href="interactive.html">Quiz</a>
+                <a href="bibliography.html">Bibliography</a>
+
+            </div>
+
+            <button class="menu-button" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="page-layout">
+
+        <!-- Sticky Sidebar -->
+        <aside class="side-menu">
+
+            <a href="index.html" class="side-title">
+                MOBILE SIGN DETECTION
+            </a>
+
+            <div class="side-links">
+
+                <a href="#how-successful">
+                    How Successful Are Current Systems?
+                </a>
+
+                <a href="#current-research">
+                    What Current Research Can Do
+                </a>
+
+                <a href="#performance">
+                    What Do the Results Tell Us?
+                </a>
+
+                <a href="#problems">
+                    Where Do Problems Still Occur?
+                </a>
+
+                <a href="#approach-comparison">
+                    Comparing Approaches in Difficult Environments
+                </a>
+
+                <a href="#mobile-computing">
+                    Mobile Computing Limitations
+                </a>
+
+                <a href="#on-device-cloud">
+                    On-Device vs. Cloud Processing
+                </a>
+
+                <a href="#researcher">
+                    Researcher Perspective
+                </a>
+
+                <a href="#false-results">
+                    False Positives and False Negatives
+                </a>
+
+                <a href="#accessibility">
+                    Why Accuracy Matters
+                </a>
+
+                <a href="#main-lesson">
+                    The Main Lesson
+                </a>
+
+                <a href="#next">
+                    What Comes Next?
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Page Content -->
+        <div class="page-content">
+
+            <!-- Page Audio -->
+            <section class="audio-section">
+
+                <div class="audio-card">
+
+                    <div class="audio-icon">
+                        🎧
+                    </div>
+
+                    <div class="audio-content">
+
+                        <p class="audio-label">
+                            LISTEN TO THIS PAGE
+                        </p>
+
+                        <h3>
+                            Successes and Limitations
+                        </h3>
+
+                        <p>
+                            Listen to what current sign detection systems can do,
+                            their limitations, and the challenges of mobile processing.
+                        </p>
+
+                        <audio controls>
+                            <source src="audio/limitations.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Page Header -->
+            <section class="page-header">
+
+                <p class="course">CS 663 — Computer Vision</p>
+
+                <h1>Successes and Limitations</h1>
+
+                <p>
+                    What current sign detection systems can do and where they still
+                    have difficulties.
+                </p>
+
+            </section>
+
+
+            <!-- Introduction -->
+            <section class="content-section" id="how-successful">
+
+                <h2>How Successful Are Current Systems?</h2>
+
+                <p>
+                    Previous research shows that computer vision can detect and
+                    locate signs in both indoor and outdoor environments. Researchers
+                    have developed systems that can recognize signs, estimate their
+                    location, and use the information as part of accessibility and
+                    navigation applications. <a href="bibliography.html#source1">[1]</a>
+                    <a href="bibliography.html#source2">[2]</a>
+                </p>
+
+                <p>
+                    However, successful detection in a research experiment does not
+                    mean that a system will work perfectly in every real-world
+                    situation. Performance can change depending on the type of sign, the camera,
+                    the environment, and the conditions under which the image was
+                    captured. <a href="bibliography.html#source1">[1]</a>
+                    <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Successes -->
+            <section class="content-section" id="current-research">
+
+                <h2>What Current Research Can Do</h2>
+
+                <div class="topic-grid">
+
+                    <div class="topic-card">
+
+                        <h3>Detect Signs</h3>
+
+                        <p>
+                            Object detection models can identify signs in images and
+                            produce bounding boxes showing where they are located. <a
+                                href="bibliography.html#source1">[1]</a>
+                            <a href="bibliography.html#source4">[4]</a>
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Handle Different Sizes</h3>
+
+                        <p>
+                            Multi-scale techniques can help detect signs that appear
+                            at different sizes in an image. <a href="bibliography.html#source3">[3]</a>
+                            <a href="bibliography.html#source4">[4]</a>
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Use Context</h3>
+
+                        <p>
+                            Some approaches use information around a sign to improve
+                            detection in complex environments. <a href="bibliography.html#source3">[3]</a>
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Handle Occlusion</h3>
+
+                        <p>
+                            Some research uses visible portions of signs to help
+                            detect signs that are partially blocked. <a href="bibliography.html#source3">[3]</a>
+                            <a href="bibliography.html#source5">[5]</a>
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Support Navigation</h3>
+
+                        <p>
+                            Indoor systems can combine sign detection with location
+                            tracking and floorplan information. <a href="bibliography.html#source1">[1]</a>
+                            <a href="bibliography.html#source2">[2]</a>
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Work in Real Time</h3>
+
+                        <p>
+                            Some object detection approaches are designed to process
+                            camera frames quickly enough for interactive applications. Cheraghi et al.,
+                            for example, developed a real-time indoor sign detection system
+                            using YOLOv5. <a href="bibliography.html#source1">[1]</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="content-section" id="performance">
+
+                <h2>What Do the Results Tell Us?</h2>
+
+                <p>
+                    Previous research shows that sign detection systems can achieve
+                    strong detection performance, especially when signs are
+                    visible and the system is tested in an environment similar to
+                    its training data. However, performance can vary between
+                    different types of signs and environments.
+                    <a href="bibliography.html#source1">[1]</a>
+                    <a href="bibliography.html#source3">[3]</a>
+                </p>
+
+                <p>
+                    The results discussed in the previous research section also show
+                    that high precision does not always mean that a system finds
+                    every sign. A system can make mostly correct detections while
+                    still missing signs that are difficult to see.
+                    <a href="bibliography.html#source1">[1]</a>
+                </p>
+
+                <p>
+                    This means that accuracy needs to be considered together with
+                    the conditions in which the system is being used. A model that
+                    performs well on clear images may have more difficulty with
+                    small, distant, partially blocked, or blurry signs.
+                    <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source4">[4]</a>
+                    <a href="bibliography.html#source5">[5]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Limitations -->
+            <section class="content-section" id="problems">
+
+                <h2>Where Do Problems Still Occur?</h2>
+
+                <p>
+                <p>
+                    Although current systems can perform well, difficult real-world conditions
+                    can still cause missed detections and incorrect detections. The results
+                    depend on the type of detection method and the conditions in which it is used.
+                </p>
+
+
+                <div class="comparison-table">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Problem</th>
+                                <th>Why It Is Difficult</th>
+                                <th>Possible Effect</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Small signs
+                                </td>
+
+                                <td>
+                                    There are fewer pixels available to represent
+                                    the sign.
+                                </td>
+
+                                <td>
+                                    The sign may be missed or incorrectly classified.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Extreme viewpoints
+                                </td>
+
+                                <td>
+                                    Perspective changes the appearance of the sign.
+                                </td>
+
+                                <td>
+                                    The detector may have difficulty recognizing
+                                    the object.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Occlusion
+                                </td>
+
+                                <td>
+                                    Part of the sign is hidden.
+                                </td>
+
+                                <td>
+                                    There may not be enough visible information.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Complex backgrounds
+                                </td>
+
+                                <td>
+                                    Other objects and text can look similar to the
+                                    target sign.
+                                </td>
+
+                                <td>
+                                    False detections can occur.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Poor lighting
+                                </td>
+
+                                <td>
+                                    Lighting changes the appearance and visibility
+                                    of the sign.
+                                </td>
+
+                                <td>
+                                    Features may become difficult to detect.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    Motion blur
+                                </td>
+
+                                <td>
+                                    Camera movement can make the sign less sharp.
+                                </td>
+
+                                <td>
+                                    Important visual details may be lost.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section class="content-section" id="approach-comparison">
+
+                <h2>Comparing Approaches in Difficult Environments</h2>
+
+                <p>
+                    Different computer vision approaches have different strengths
+                    depending on the conditions. Traditional image processing can be
+                    useful when signs have clear colors, edges, or shapes, but it can
+                    become less reliable when the environment is cluttered or the
+                    appearance of the sign changes.
+                </p>
+
+                <p>
+                    Deep-learning-based object detectors can learn more complex
+                    visual patterns and can be used to detect different types and
+                    sizes of signs. YOLO-based systems are also useful for real-time
+                    applications because they are designed for fast object
+                    detection. <a href="bibliography.html#source1">[1]</a>
+                    <a href="bibliography.html#source4">[4]</a>
+                </p>
+
+                <p>
+                    Other approaches focus on specific difficult conditions. TSingNet
+                    uses scale-aware and context-rich features to improve detection
+                    of small and partially occluded signs, while D-patches focuses on
+                    local parts of signs to help with occlusion.
+                    <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source5">[5]</a>
+                </p>
+
+                <div class="comparison-table">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Approach</th>
+                                <th>Strength</th>
+                                <th>Limitation</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Traditional Computer Vision</td>
+                                <td>
+                                    Can work well with clear shapes, edges, and colors.
+                                </td>
+                                <td>
+                                    Can be sensitive to changes in lighting and
+                                    background.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Object Detection</td>
+                                <td>
+                                    Can locate different objects using bounding boxes.
+                                </td>
+                                <td>
+                                    Performance can decrease with very small or
+                                    difficult signs.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Scale-Aware Methods</td>
+                                <td>
+                                    Designed to improve detection of small signs.
+                                </td>
+                                <td>
+                                    More specialized than a basic detector.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Occlusion-Aware Methods</td>
+                                <td>
+                                    Can use visible parts or local features when a sign
+                                    is partially blocked.
+                                </td>
+                                <td>
+                                    Severe occlusion can still remove important visual
+                                    information.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p>
+                    There is therefore no single approach that solves every difficult
+                    situation. The best choice depends on the environment, the types
+                    of signs being detected, and whether the system needs to operate
+                    in real time on a mobile device.
+                </p>
+
+            </section>
+
+
+            <!-- Mobile Computing -->
+            <section class="content-section" id="mobile-computing">
+
+                <h2>Mobile Computing Limitations</h2>
+
+                <p>
+                    A sign detection system designed for a smartphone has additional
+                    limitations. A mobile device has less computing power and battery
+                    capacity than a large computer or server.
+                </p>
+
+                <p>
+                    A more complicated computer vision model may provide more
+                    information but can require more processing time and energy.
+                    A smaller model may be faster and easier to run on a phone but
+                    may have different accuracy or detection capabilities.
+                </p>
+
+                <p>
+                    Therefore, designing a mobile system requires a balance between
+                    detection performance, processing speed, model size, and energy
+                    usage. These limitations can make it difficult to use the same
+                    models on a smartphone that could be used on a more powerful
+                    computer. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- On Device vs Cloud -->
+            <section class="content-section" id="on-device-cloud">
+
+                <h2>On-Device vs. Cloud Processing</h2>
+
+                <p>
+                    Another design decision is where the computer vision model should
+                    run.
+                </p>
+
+                <div class="comparison-grid">
+
+                    <div class="topic-card">
+
+                        <h3>On-Device Processing</h3>
+
+                        <p>
+                            The model runs directly on the smartphone.
+                        </p>
+
+                        <p>
+                            <strong>Advantages:</strong>
+                            The system does not need to send every image to a remote
+                            server, which can reduce communication delays.
+                        </p>
+
+                        <p>
+                            <strong>Challenge:</strong>
+                            The phone has limited computing resources compared with
+                            more powerful computers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>Cloud Processing</h3>
+
+                        <p>
+                            Images or video frames are sent to a remote computer for
+                            processing.
+                        </p>
+
+                        <p>
+                            <strong>Advantages:</strong>
+                            A remote server can provide more computing resources.
+                        </p>
+
+                        <p>
+                            <strong>Challenge:</strong>
+                            Sending images to the cloud can introduce network latency
+                            and may cause delays in receiving results.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Researcher Perspective -->
+            <section class="question-section" id="researcher">
+
+                <h2>Researcher Perspective: Mobile Processing</h2>
+
+                <p>
+                    James Coughlan explained that running sign recognition directly
+                    on a smartphone can limit the available computing power and
+                    therefore potentially limit accuracy compared with remote
+                    processing. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <p>
+                    However, sending camera images to the cloud introduces other
+                    problems. Coughlan pointed out that network latency can delay
+                    recognition results and that dropped video frames can occur.
+                    <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <p>
+                    This creates a tradeoff between processing locally and using
+                    remote computing resources.
+                </p>
+
+
+            </section>
+
+
+            <!-- False Positives -->
+            <section class="content-section" id="false-results">
+
+                <h2>False Positives and False Negatives</h2>
+
+                <p>
+                    A sign detection system can make different types of mistakes.
+                </p>
+
+                <div class="comparison-grid">
+
+                    <div class="topic-card">
+
+                        <h3>False Positive</h3>
+
+                        <p>
+                            The system says that a sign is present when the object is
+                            actually something else.
+                        </p>
+
+                        <p>
+                            For example, a poster or advertisement might be
+                            incorrectly detected as a target sign.
+                        </p>
+
+                    </div>
+
+
+                    <div class="topic-card">
+
+                        <h3>False Negative</h3>
+
+                        <p>
+                            A sign is present, but the system fails to detect it.
+                        </p>
+
+                        <p>
+                            This could happen when the sign is very small, blocked,
+                            blurry, or outside the camera's useful view.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Accessibility -->
+            <section class="content-section" id="accessibility">
+
+                <h2>Why Accuracy Matters for Accessibility</h2>
+
+                <p>
+                    In an accessibility application, detection errors can affect how
+                    useful the system is to the person using it.
+                    Missing an important sign could mean that the user does not
+                    receive information about an exit, room, restroom, or other
+                    location.
+                </p>
+
+                <p>
+                    On the other hand, providing too many incorrect detections could
+                    make the system difficult to use. This connects to the "visual
+                    spam" problem discussed by Coughlan, where the environment may
+                    contain many signs and pieces of text but not all of them are
+                    relevant to the user. <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+            </section>
+
+
+            <!-- Overall -->
+            <section class="question-section" id="main-lesson">
+
+                <h2>The Main Lesson</h2>
+
+                <p>
+                    Current computer vision research demonstrates that signs can be
+                    detected under many conditions, but real-world mobile sign
+                    detection remains challenging. Small signs, occlusion, viewpoint changes,
+                    camera movement, and clutter can all affect performance.
+                    <a href="bibliography.html#source1">[1]</a>
+                    <a href="bibliography.html#source3">[3]</a>
+                    <a href="bibliography.html#source4">[4]</a>
+                    <a href="bibliography.html#source5">[5]</a>
+                    <a href="bibliography.html#source8">[8]</a>
+                </p>
+
+                <p>
+                    A useful system needs to consider not only the detection model but
+                    also the camera, environment, computing resources, and information
+                    that the user actually needs.
+                </p>
+
+            </section>
+
+
+            <!-- Next -->
+            <section class="goal-section" id="next">
+
+                <h2>What Comes Next?</h2>
+
+                <p>
+                    The final research section looks at possible improvements for
+                    future mobile sign detection systems, including ideas suggested
+                    by researcher James Coughlan.
+                </p>
+
+                <a href="future.html" class="button">
+                    Next: Future Improvements →
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            CS 663 — Computer Vision
+        </p>
+
+        <p>
+            Mobile Sign Detection | Vanessa Rodriguez
+        </p>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("show");
+        }
+    </script>
+
+</body>
+
+</html>
